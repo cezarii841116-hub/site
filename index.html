@@ -6,49 +6,46 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0d0d0d; /* Дълбоко черно */
+            background-color: #0d0d0d;
             color: #e0e0e0;
-            font-family: 'Times New Roman', serif; /* Класически арт стил */
+            font-family: 'Times New Roman', serif;
             line-height: 1.8;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 80px 25px;
+            padding: 60px 25px;
             text-align: center;
         }
         .logo-frame {
             display: inline-block;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid rgba(0, 255, 204, 0.2);
             border-radius: 50%;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .logo-img {
-            width: 150px;
+            width: 140px;
             height: auto;
             border-radius: 50%;
             display: block;
         }
         h1 {
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: 300;
             letter-spacing: 4px;
             color: #ffffff;
             text-transform: uppercase;
-            margin-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 20px;
+            margin-bottom: 50px;
         }
         .mission-text {
             text-align: justify;
-            font-size: 1.15em;
+            font-size: 1.1em;
             color: #bcbcbc;
             background: rgba(255,255,255,0.02);
-            padding: 40px;
-            border-radius: 2px;
+            padding: 35px;
             border-left: 2px solid #00ffcc;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         .gallery-section {
             margin-top: 40px;
@@ -56,8 +53,8 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px;
+            margin-top: 40px;
         }
         .frame {
             background: #151515;
@@ -67,32 +64,52 @@
             align-items: center;
             justify-content: center;
             color: #444;
-            font-size: 0.9em;
+            font-size: 0.85em;
             letter-spacing: 1px;
-            transition: border 0.5s;
         }
-        .frame:hover {
-            border-color: #00ffcc;
+        
+        /* СЕКЦИЯ ПОДКРЕПА */
+        .support-box {
+            margin-top: 80px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(to bottom, rgba(0, 255, 204, 0.02), transparent);
         }
-        .contact-link {
+        .progress-container {
+            max-width: 400px;
+            margin: 25px auto;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #222;
+            height: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 2%; /* Тук ще променяш процента, когато имаш дарения */
+            background: #00ffcc;
+            height: 100%;
+        }
+        .cta-button {
             display: inline-block;
-            margin-top: 60px;
-            padding: 15px 40px;
+            padding: 14px 30px;
             border: 1px solid #00ffcc;
             color: #00ffcc;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             transition: 0.4s;
+            margin-top: 20px;
         }
-        .contact-link:hover {
+        .cta-button:hover {
             background: #00ffcc;
             color: #000;
         }
         footer {
-            margin-top: 120px;
-            font-size: 0.75em;
+            margin-top: 100px;
+            font-size: 0.7em;
             color: #555;
             letter-spacing: 2px;
         }
@@ -102,28 +119,45 @@
 
     <div class="container">
         <div class="logo-frame">
-            <img src="logo.jpg" alt="Global Art Hub Logo" class="logo-img">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
         </div>
 
         <h1>Global Artists Hub</h1>
         
         <div class="mission-text">
-            <p style="color: #00ffcc; font-style: italic; margin-top: 0; font-size: 1.2em;">Където изкуството намира своя дом.</p>
-            Нашият проект се роди от една искрена идея: да създадем пространство, в което творчеството е над всичко. Тук не съществуват граници, а само споделени емоции и таланти. 
-            <br><br>
-            Това е Вашата сцена. Ние вярваме в силата на автентичното изкуство и в нуждата на всеки артист да бъде забелязан. Нашата мисия е да свързваме хората чрез красотата, която създават, изграждайки общност, базирана на взаимно вдъхновение и подкрепа.
+            <p style="color: #00ffcc; font-style: italic; margin-top: 0;">Където всяка творба намира своя дом.</p>
+            Ние вярваме в чистата сила на изкуството. Този проект съществува, за да даде гласност на творци от всеки ъгъл на планетата, обединявайки ги в една обща дигитална галерия. Тук фокусът е върху автентичността и споделянето.
         </div>
 
         <div class="gallery-section">
-            <h2 style="font-weight: 300; letter-spacing: 3px; font-size: 1.2em;">ТЕКУЩА ЕКСПОЗИЦИЯ</h2>
+            <h2 style="font-weight: 300; letter-spacing: 3px; font-size: 1.1em;">ЕКСПОЗИЦИЯ</h2>
             <div class="grid">
                 <div class="frame">Очакваме творба №1</div>
                 <div class="frame">Очакваме творба №2</div>
                 <div class="frame">Очакваме творба №3</div>
             </div>
+            <a href="mailto:Cezarii841116@gmail.com" class="cta-button">Изпрати творба</a>
         </div>
 
-        <a href="mailto:Cezarii841116@gmail.com" class="contact-link">СТАНЕТЕ ЧАСТ ОТ ГАЛЕРИЯТА</a>
+        <div class="support-box">
+            <h3 style="font-weight: 300; letter-spacing: 2px; color: #00ffcc; margin-top: 0;">ФОНД ЗА РАЗВИТИЕ</h3>
+            <p style="font-size: 0.95em; color: #999; max-width: 500px; margin: 0 auto;">
+                За да поддържаме сайта без реклами и достъпен за всички, разчитаме на вашата подкрепа. Минимална вноска от <b>2 EUR</b> (цената на едно кафе) ни помага да покриваме разходите за сървъри.
+            </p>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p style="font-size: 0.75em; color: #00ffcc; margin-top: 10px; letter-spacing: 1px;">
+                    ТЕКУЩ ПРОГРЕС: 0.00 EUR / 100.00 EUR
+                </p>
+            </div>
+
+            <a href="https://www.buymeacoffee.com/peter" target="_blank" class="cta-button" style="background: transparent;">
+                ПОДКРЕПИ НИ С 2 EUR
+            </a>
+        </div>
 
         <footer>
             EST. 2025 • СЪЗДАДЕНО С УВАЖЕНИЕ КЪМ ИЗКУСТВОТО
