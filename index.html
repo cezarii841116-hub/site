@@ -6,101 +6,127 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0f0f;
-            color: #ffffff;
-            font-family: 'Georgia', serif; /* По-артистичен и сериозен шрифт */
-            line-height: 1.6;
+            background-color: #0d0d0d; /* Дълбоко черно */
+            color: #e0e0e0;
+            font-family: 'Times New Roman', serif; /* Класически арт стил */
+            line-height: 1.8;
         }
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 25px;
+            text-align: center;
         }
-        .logo {
-            width: 140px;
+        .logo-frame {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            border-radius: 50%;
+            margin-bottom: 50px;
+        }
+        .logo-img {
+            width: 150px;
             height: auto;
             border-radius: 50%;
-            border: 1px solid rgba(0, 255, 204, 0.3); /* Фина линия, не натрапчива */
-            margin-bottom: 40px;
+            display: block;
         }
         h1 {
+            font-size: 2.2em;
             font-weight: 300;
-            letter-spacing: 3px;
-            color: #f0f0f0;
-            margin-bottom: 50px;
+            letter-spacing: 4px;
+            color: #ffffff;
             text-transform: uppercase;
-        }
-        .content-box {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            border-radius: 4px; /* Прави ъгли за по-професионален вид */
-            border-left: 3px solid #00ffcc;
-            text-align: left;
             margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
         }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .mission-text {
+            text-align: justify;
+            font-size: 1.15em;
+            color: #bcbcbc;
+            background: rgba(255,255,255,0.02);
+            padding: 40px;
+            border-radius: 2px;
+            border-left: 2px solid #00ffcc;
+            margin-bottom: 80px;
+        }
+        .gallery-section {
             margin-top: 40px;
         }
-        .art-placeholder {
-            background: #1a1a1a;
-            aspect-ratio: 1/1;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .frame {
+            background: #151515;
+            aspect-ratio: 3/4;
+            border: 1px solid #252525;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #444;
-            border: 1px solid #222;
-            font-style: italic;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            transition: border 0.5s;
         }
-        .cta-button {
+        .frame:hover {
+            border-color: #00ffcc;
+        }
+        .contact-link {
             display: inline-block;
-            padding: 15px 35px;
+            margin-top: 60px;
+            padding: 15px 40px;
             border: 1px solid #00ffcc;
             color: #00ffcc;
             text-decoration: none;
-            transition: all 0.4s;
+            text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 20px;
+            font-size: 0.9em;
+            transition: 0.4s;
         }
-        .cta-button:hover {
+        .contact-link:hover {
             background: #00ffcc;
             color: #000;
+        }
+        footer {
+            margin-top: 120px;
+            font-size: 0.75em;
+            color: #555;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="logo.jpg" alt="Logo" class="logo">
+        <div class="logo-frame">
+            <img src="logo.jpg" alt="Global Art Hub Logo" class="logo-img">
+        </div>
 
         <h1>Global Artists Hub</h1>
         
-        <div class="content-box">
-            <h2 style="color: #00ffcc; font-weight: normal; margin-top: 0;">Нашата Мисия</h2>
-            <p>
-                Това не е просто уебсайт, а пространство за автентичност. Създадохме това място за творци от всяка точка на света, които търсят чист начин да споделят изкуството си. Тук фокусът е върху таланта, а не върху алгоритмите. 
-            </p>
-            <p>
-                Нашата цел е да изградим общност, в която всеки може да намери вдъхновение и да покаже своя вътрешен свят на глобалната сцена.
-            </p>
+        <div class="mission-text">
+            <p style="color: #00ffcc; font-style: italic; margin-top: 0; font-size: 1.2em;">Където изкуството намира своя дом.</p>
+            Нашият проект се роди от една искрена идея: да създадем пространство, в което творчеството е над всичко. Тук не съществуват граници, а само споделени емоции и таланти. 
+            <br><br>
+            Това е Вашата сцена. Ние вярваме в силата на автентичното изкуство и в нуждата на всеки артист да бъде забелязан. Нашата мисия е да свързваме хората чрез красотата, която създават, изграждайки общност, базирана на взаимно вдъхновение и подкрепа.
         </div>
 
-        <h3 style="font-weight: 300; letter-spacing: 2px;">ТЕКУЩА ЕКСПОЗИЦИЯ</h3>
-        <div class="gallery-grid">
-            <div class="art-placeholder">Очакваме първата творба...</div>
-            <div class="art-placeholder">Свободно място</div>
-            <div class="art-placeholder">Свободно място</div>
+        <div class="gallery-section">
+            <h2 style="font-weight: 300; letter-spacing: 3px; font-size: 1.2em;">ТЕКУЩА ЕКСПОЗИЦИЯ</h2>
+            <div class="grid">
+                <div class="frame">Очакваме творба №1</div>
+                <div class="frame">Очакваме творба №2</div>
+                <div class="frame">Очакваме творба №3</div>
+            </div>
         </div>
 
-        <div style="margin-top: 80px;">
-            <p style="color: #888;">Искате ли вашето изкуство да стане част от нашата история?</p>
-            <a href="mailto:Cezarii841116@gmail.com" class="cta-button">СВЪРЖЕТЕ СЕ С НАС</a>
-        </div>
+        <a href="mailto:Cezarii841116@gmail.com" class="contact-link">СТАНЕТЕ ЧАСТ ОТ ГАЛЕРИЯТА</a>
 
-        <footer style="margin-top: 100px; padding-bottom: 40px; font-size: 11px; color: #444; letter-spacing: 2px;">
-            EST. 2025 • СЪЗДАДЕНО ОТ ТВОРЦИ ЗА ТВОРЦИ
+        <footer>
+            EST. 2025 • СЪЗДАДЕНО С УВАЖЕНИЕ КЪМ ИЗКУСТВОТО
         </footer>
     </div>
 
