@@ -5,151 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Artists Hub</title>
     <style>
-        /* ЦЯЛОСТЕН ДИЗАЙН */
+        /* СТИЛЕН И ТОПЪЛ ФОН */
         body {
-            background-color: #000;
-            color: #fff;
+            background: radial-gradient(circle at top, #1a1a2e 0%, #0d0d0d 100%);
+            color: #f0f0f0;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 120px; /* Място за бутона долу */
+            padding-bottom: 140px;
         }
 
-        /* ОСНОВНОТО ЛОГО (НЕОНОВИТЕ КРЪГОВЕ) */
+        /* ПРОФЕСИОНАЛНО ПОДРЕДЕНА ГОРНА ЧАСТ */
         .hero-section {
             width: 100%;
-            max-width: 500px;
-            margin-top: 10px;
+            max-width: 600px;
+            margin-top: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .hero-section img {
             width: 100%;
             display: block;
-            border-radius: 15px;
         }
 
-        /* ТЕКСТОВА ЧАСТ */
+        /* ЕЛЕГАНТНИ ЗАГЛАВИЯ */
         .mission-header {
-            color: #00f2ff; /* Електриково синьо */
-            font-size: 26px;
-            font-weight: bold;
-            margin: 30px 0 10px;
+            color: #00f2ff;
+            font-size: 28px;
+            font-weight: 300; /* По-тънък шрифт за професионално излъчване */
+            margin: 40px 0 15px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+            letter-spacing: 3px;
         }
         .mission-text {
-            padding: 0 25px;
+            padding: 0 30px;
             text-align: center;
-            line-height: 1.6;
-            max-width: 600px;
-            color: #cccccc;
+            line-height: 1.8;
+            max-width: 650px;
+            color: #bdc3c7;
+            font-size: 17px;
         }
 
-        /* ГАЛЕРИЯ */
+        /* СТИЛНА ГАЛЕРИЯ */
         .gallery-container {
             width: 90%;
-            max-width: 800px;
-            margin-top: 50px;
+            max-width: 900px;
+            margin-top: 60px;
         }
         .gallery-title {
-            color: #00ff00; /* Неоново зелено */
+            color: #00ff00;
             text-transform: uppercase;
-            border-bottom: 2px solid #222;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
             font-size: 20px;
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
         }
         .art-card {
-            background: #0a0a0a;
-            border: 1px solid #333;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             overflow: hidden;
-            transition: 0.3s ease;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
         }
         .art-card:hover {
             border-color: #00f2ff;
-            transform: scale(1.03);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 242, 255, 0.1);
         }
         .art-card img {
             width: 100%;
-            aspect-ratio: 1/1;
+            aspect-ratio: 4/5;
             object-fit: cover;
             display: block;
-            opacity: 0.8;
+            filter: grayscale(20%);
+            transition: 0.4s;
         }
+        .art-card:hover img { filter: grayscale(0%); }
         .art-label {
-            padding: 10px;
+            padding: 15px;
             font-size: 14px;
             text-align: center;
-            color: #666;
+            color: #888;
+            background: rgba(0,0,0,0.3);
         }
 
-        /* ФИКСИРАН БУТОН ЗА ПОДКРЕПА (BUY ME A COFFEE) */
+        /* ПРЕМИУМ БУТОН ЗА ПОДКРЕПА */
         .support-btn {
             position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: linear-gradient(90deg, #00f2ff, #00ff00);
+            bottom: 30px;
+            width: 90%;
+            max-width: 400px;
+            background: linear-gradient(135deg, #00f2ff 0%, #00ff00 100%);
             color: #000;
             text-align: center;
-            padding: 22px 0;
-            font-weight: 800;
+            padding: 18px 0;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
+            border-radius: 50px; /* Овална форма за повече стил */
             z-index: 9999;
-            box-shadow: 0 -8px 30px rgba(0, 242, 255, 0.4);
-            transition: 0.2s;
+            box-shadow: 0 10px 40px rgba(0, 255, 0, 0.3);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-transform: uppercase;
         }
-        .support-btn:active {
-            transform: scale(0.97);
-            filter: brightness(1.2);
+        .support-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 255, 0, 0.5);
         }
     </style>
 </head>
 <body>
 
     <div class="hero-section">
-        <img src="logo.jpg" alt="Global Artists Hub Logo">
+        <img src="logo.jpg" alt="Art Hub">
     </div>
 
     <div class="mission-header">Нашата Мисия</div>
     <div class="mission-text">
-        Това е място за хора от цял свят, които искат да споделят своето изкуство, 
-        да обменят опит и да си помагат помежду си. Идеята ни е да им дадем гласност.
+        Добре дошли в едно споделено пространство, създадено за творци. 
+        Тук изкуството среща подкрепата, а опитът се обменя свободно. 
+        Нашата цел е да дадем гласност на всеки талант.
     </div>
 
     <div class="gallery-container">
-        <h2 class="gallery-title">Галерия на творците</h2>
+        <h2 class="gallery-title">Подбрани Творби</h2>
         <div class="gallery-grid">
             <div class="art-card">
                 <img src="logo.jpg">
-                <div class="art-label">Творба #1</div>
+                <div class="art-label">Digital Vision #1</div>
             </div>
             <div class="art-card">
                 <img src="logo.jpg">
-                <div class="art-label">Творба #2</div>
+                <div class="art-label">Digital Vision #2</div>
             </div>
             <div class="art-card">
                 <img src="logo.jpg">
-                <div class="art-label">Творба #3</div>
-            </div>
-            <div class="art-card">
-                <img src="logo.jpg">
-                <div class="art-label">Творба #4</div>
+                <div class="art-label">Digital Vision #3</div>
             </div>
         </div>
     </div>
 
     <a href="https://www.buymeacoffee.com/kiber" target="_blank" class="support-btn">
-        ☕ ПОДКРЕПЕТЕ НИ С 2 ЕВРО ★ SUPPORT US
+        ☕ Подкрепете изкуството
     </a>
 
 </body>
-</html>            
+</html>
