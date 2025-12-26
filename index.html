@@ -1,53 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нашата Мисия</title>
+    <title>Global Artists Hub</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px; /* Място за лентата */
         }
 
-        /* Това ще зареди твоята неонова картинка */
-        .header-image {
+        /* ОСНОВНО ИЗОБРАЖЕНИЕ */
+        .hero-img {
             width: 100%;
-            max-width: 600px;
-            display: block;
-            margin: 0 auto;
+            max-width: 500px;
         }
+        .hero-img img { width: 100%; display: block; }
 
-        .title {
-            color: #00f2ff; /* Неоново синьо/зелено */
-            font-size: 24px;
+        /* ТЕКСТОВЕ */
+        .mission-header {
+            color: #00f2ff;
+            font-size: 26px;
             font-weight: bold;
-            margin: 25px 0 15px 0;
+            margin: 25px 0 10px;
+            text-transform: uppercase;
+        }
+        .mission-text {
+            padding: 0 25px;
+            text-align: center;
+            line-height: 1.6;
+            max-width: 600px;
+            color: #ccc;
+            margin-bottom: 30px;
         }
 
-        .description {
-            padding: 0 25px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #e0e0e0;
-            max-width: 600px;
-            margin: 0 auto;
+        /* ГАЛЕРИЯ */
+        .gallery-container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
         }
+        .gallery-title {
+            color: #00ff00;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .art-card {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .art-card:hover { border-color: #00f2ff; transform: translateY(-5px); }
+        .art-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 12px;
+        }
+        .art-info { padding: 10px; font-size: 14px; color: #888; }
+
+        /* ЛЕНТА ЗА ПОДКРЕПА (Buy Me a Coffee) */
+        .support-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #00f2ff, #00ff00);
+            color: #000;
+            text-align: center;
+            padding: 18px 0;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 -5px 20px rgba(0, 242, 255, 0.4);
+            z-index: 9999;
+            transition: 0.3s;
+        }
+        .support-bar:hover { filter: brightness(1.2); letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <img src="logo.jpg" class="header-image">
-
-    <div class="title">Нашата Мисия</div>
-
-    <div class="description">
-        Това е място за хора от цял свят, които искат да споделят своето изкуство, да обменят опит и да си помагат помежду си. Идеята ни е да им дадем гласност.
+    <div class="hero-img">
+        <img src="logo.jpg" alt="Global Artists Hub">
     </div>
+
+    <div class="mission-header">Нашата Мисия</div>
+    <div class="mission-text">
+        Това е място за хора от цял свят, които искат да споделят своето изкуство, 
+        да обменят опит и да си помагат помежду си. Идеята ни е да им дадем гласност.
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-title">Галерия на творците</div>
+        <div class="gallery-grid">
+            <div class="art-card">
+                <div class="art-placeholder">Очаква творба...</div>
+                <div class="art-info">Творец #1</div>
+            </div>
+            <div class="art-card">
+                <div class="art-placeholder">Очаква творба...</div>
+                <div class="art-info">Творец #2</div>
+            </div>
+            <div class="art-card">
+                <div class="art-placeholder">Очаква творба...</div>
+                <div class="art-info">Творец #3</div>
+            </div>
+            <div class="art-card">
+                <div class="art-placeholder">Очаква творба...</div>
+                <div class="art-info">Творец #4</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://www.buymeacoffee.com/cezarii841116" target="_blank" class="support-bar">
+        ☕ ПОДКРЕПЕТЕ НИ С 2 ЕВРО ★ SUPPORT US WITH 2€
+    </a>
 
 </body>
 </html>
