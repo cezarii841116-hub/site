@@ -5,105 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Artists Hub</title>
     <style>
+        /* ЦЯЛОСТЕН ДИЗАЙН */
         body {
             background-color: #000;
             color: #fff;
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 80px; /* Място за лентата */
+            padding-bottom: 120px; /* Място за бутона долу */
         }
 
-        /* ОСНОВНО ИЗОБРАЖЕНИЕ */
-        .hero-img {
+        /* ОСНОВНОТО ЛОГО (НЕОНОВИТЕ КРЪГОВЕ) */
+        .hero-section {
             width: 100%;
             max-width: 500px;
+            margin-top: 10px;
         }
-        .hero-img img { width: 100%; display: block; }
+        .hero-section img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
 
-        /* ТЕКСТОВЕ */
+        /* ТЕКСТОВА ЧАСТ */
         .mission-header {
-            color: #00f2ff;
+            color: #00f2ff; /* Електриково синьо */
             font-size: 26px;
             font-weight: bold;
-            margin: 25px 0 10px;
+            margin: 30px 0 10px;
             text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
         }
         .mission-text {
             padding: 0 25px;
             text-align: center;
             line-height: 1.6;
             max-width: 600px;
-            color: #ccc;
-            margin-bottom: 30px;
+            color: #cccccc;
         }
 
         /* ГАЛЕРИЯ */
         .gallery-container {
             width: 90%;
             max-width: 800px;
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .gallery-title {
-            color: #00ff00;
+            color: #00ff00; /* Неоново зелено */
             text-transform: uppercase;
+            border-bottom: 2px solid #222;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
             font-size: 20px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 15px;
-            margin-bottom: 40px;
         }
         .art-card {
             background: #0a0a0a;
-            border: 1px solid #222;
-            border-radius: 10px;
+            border: 1px solid #333;
+            border-radius: 12px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
-        .art-card:hover { border-color: #00f2ff; transform: translateY(-5px); }
-        .art-placeholder {
+        .art-card:hover {
+            border-color: #00f2ff;
+            transform: scale(1.03);
+        }
+        .art-card img {
             width: 100%;
             aspect-ratio: 1/1;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #444;
-            font-size: 12px;
+            object-fit: cover;
+            display: block;
+            opacity: 0.8;
         }
-        .art-info { padding: 10px; font-size: 14px; color: #888; }
+        .art-label {
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+        }
 
-        /* ЛЕНТА ЗА ПОДКРЕПА (Buy Me a Coffee) */
-        .support-bar {
+        /* ФИКСИРАН БУТОН ЗА ПОДКРЕПА (BUY ME A COFFEE) */
+        .support-btn {
             position: fixed;
             bottom: 0;
-            left: 0;
             width: 100%;
             background: linear-gradient(90deg, #00f2ff, #00ff00);
             color: #000;
             text-align: center;
-            padding: 18px 0;
-            font-weight: bold;
-            font-size: 18px;
+            padding: 22px 0;
+            font-weight: 800;
             text-decoration: none;
-            box-shadow: 0 -5px 20px rgba(0, 242, 255, 0.4);
+            font-size: 20px;
             z-index: 9999;
-            transition: 0.3s;
+            box-shadow: 0 -8px 30px rgba(0, 242, 255, 0.4);
+            transition: 0.2s;
+            text-transform: uppercase;
         }
-        .support-bar:hover { filter: brightness(1.2); letter-spacing: 1px; }
+        .support-btn:active {
+            transform: scale(0.97);
+            filter: brightness(1.2);
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero-img">
-        <img src="logo.jpg" alt="Global Artists Hub">
+    <div class="hero-section">
+        <img src="logo.jpg" alt="Global Artists Hub Logo">
     </div>
 
     <div class="mission-header">Нашата Мисия</div>
@@ -113,30 +126,30 @@
     </div>
 
     <div class="gallery-container">
-        <div class="gallery-title">Галерия на творците</div>
+        <h2 class="gallery-title">Галерия на творците</h2>
         <div class="gallery-grid">
             <div class="art-card">
-                <div class="art-placeholder">Очаква творба...</div>
-                <div class="art-info">Творец #1</div>
+                <img src="logo.jpg">
+                <div class="art-label">Творба #1</div>
             </div>
             <div class="art-card">
-                <div class="art-placeholder">Очаква творба...</div>
-                <div class="art-info">Творец #2</div>
+                <img src="logo.jpg">
+                <div class="art-label">Творба #2</div>
             </div>
             <div class="art-card">
-                <div class="art-placeholder">Очаква творба...</div>
-                <div class="art-info">Творец #3</div>
+                <img src="logo.jpg">
+                <div class="art-label">Творба #3</div>
             </div>
             <div class="art-card">
-                <div class="art-placeholder">Очаква творба...</div>
-                <div class="art-info">Творец #4</div>
+                <img src="logo.jpg">
+                <div class="art-label">Творба #4</div>
             </div>
         </div>
     </div>
 
-    <a href="https://www.buymeacoffee.com/cezarii841116" target="_blank" class="support-bar">
-        ☕ ПОДКРЕПЕТЕ НИ С 2 ЕВРО ★ SUPPORT US WITH 2€
+    <a href="https://www.buymeacoffee.com/kiber" target="_blank" class="support-btn">
+        ☕ ПОДКРЕПЕТЕ НИ С 2 ЕВРО ★ SUPPORT US
     </a>
 
 </body>
-</html>
+</html>            
