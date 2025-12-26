@@ -1,41 +1,31 @@
 <style>
-  .ai-face-fixed {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 120px;
-    height: 120px;
-    background: #FFD700;
-    border-radius: 50%;
-    border: 3px solid #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  .mobile-face {
+    position: fixed; bottom: 10px; right: 10px;
+    width: 80px; height: 80px;
+    background: #FFD700; border-radius: 50%;
+    border: 2px solid #000; z-index: 99999;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
-  .ai-eyes-row { display: flex; gap: 10px; }
-  .ai-eye-ball {
-    width: 25px; height: 25px;
-    background: white; border-radius: 50%;
-    position: relative; border: 1px solid #000;
+  .m-eyes { display: flex; gap: 8px; }
+  .m-eye { 
+    width: 15px; height: 15px; background: #fff; 
+    border-radius: 50%; position: relative; border: 1px solid #000;
   }
-  .ai-pupil-black {
-    width: 10px; height: 10px;
-    background: black; border-radius: 50%;
-    position: absolute; top: 30%; left: 30%;
+  .m-pupil {
+    width: 6px; height: 6px; background: #000;
+    border-radius: 50%; position: absolute; top: 20%; left: 20%;
   }
-  .ai-mouth-happy {
-    width: 40px; height: 15px;
-    border-bottom: 3px solid black;
+  .m-mouth {
+    width: 30px; height: 10px; border-bottom: 2px solid #000;
     border-radius: 50%; margin-top: 5px;
   }
 </style>
-<div class="ai-face-fixed">
-  <div class="ai-eyes-row">
-    <div class="ai-eye-ball"><div class="ai-pupil-black"></div></div>
-    <div class="ai-eye-ball"><div class="ai-pupil-black"></div></div>
+<div class="mobile-face">
+  <div class="m-eyes">
+    <div class="m-eye"><div class="m-pupil"></div></div>
+    <div class="m-eye"><div class="m-pupil"></div></div>
   </div>
-  <div class="ai-mouth-happy"></div>
+  <div class="m-mouth"></div>
 </div>
