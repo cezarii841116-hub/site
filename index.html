@@ -1,165 +1,178 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Artists Hub</title>
     <style>
-        /* СТИЛЕН И ТОПЪЛ ФОН */
+        /* СТИЛЕН ГРАДИЕНТ ЗА ТОПЛОТА */
         body {
-            background: radial-gradient(circle at top, #1a1a2e 0%, #0d0d0d 100%);
-            color: #f0f0f0;
+            background: radial-gradient(circle at top, #1a1a2e 0%, #080808 100%);
+            color: #ffffff;
             margin: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 140px;
+            padding-bottom: 150px;
         }
 
-        /* ПРОФЕСИОНАЛНО ПОДРЕДЕНА ГОРНА ЧАСТ */
-        .hero-section {
-            width: 100%;
+        /* ГЛАВНО ЗАГЛАВИЕ (HUB) */
+        .site-title {
+            font-size: 32px;
+            font-weight: 200;
+            color: #00f2ff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-top: 40px;
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+        }
+
+        .hero-container {
+            width: 90%;
             max-width: 600px;
-            margin-top: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin: 30px 0;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
-        .hero-section img {
-            width: 100%;
-            display: block;
-        }
+        .hero-container img { width: 100%; display: block; }
 
-        /* ЕЛЕГАНТНИ ЗАГЛАВИЯ */
-        .mission-header {
-            color: #00f2ff;
-            font-size: 28px;
-            font-weight: 300; /* По-тънък шрифт за професионално излъчване */
-            margin: 40px 0 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        .mission-text {
-            padding: 0 30px;
+        .mission-section {
             text-align: center;
+            max-width: 700px;
+            padding: 0 20px;
+        }
+        .mission-section h1 {
+            color: #00ff00;
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .mission-section p {
             line-height: 1.8;
-            max-width: 650px;
             color: #bdc3c7;
             font-size: 17px;
         }
 
-        /* СТИЛНА ГАЛЕРИЯ */
-        .gallery-container {
-            width: 90%;
-            max-width: 900px;
-            margin-top: 60px;
+        /* ГАЛЕРИЯ ЗА ОБМЕН НА ИЗКУСТВО */
+        .gallery-wrapper {
+            width: 95%;
+            max-width: 1000px;
+            margin-top: 70px;
         }
-        .gallery-title {
-            color: #00ff00;
+        .gallery-header {
+            font-size: 18px;
+            color: #fff;
             text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 2px;
-            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+            border-bottom: 1px solid #333;
             padding-bottom: 15px;
             margin-bottom: 30px;
-            font-size: 20px;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-        .art-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(5px);
-        }
-        .art-card:hover {
-            border-color: #00f2ff;
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 242, 255, 0.1);
-        }
-        .art-card img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            display: block;
-            filter: grayscale(20%);
-            transition: 0.4s;
-        }
-        .art-card:hover img { filter: grayscale(0%); }
-        .art-label {
-            padding: 15px;
-            font-size: 14px;
-            text-align: center;
-            color: #888;
-            background: rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
         }
 
-        /* ПРЕМИУМ БУТОН ЗА ПОДКРЕПА */
-        .support-btn {
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .art-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 15px;
+            transition: 0.4s;
+            text-align: left;
+        }
+        .art-item:hover {
+            border-color: #00f2ff;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        .art-img-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .art-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .art-meta { font-size: 14px; color: #888; }
+        .art-meta b { color: #00f2ff; display: block; margin-bottom: 5px; }
+
+        /* БУТОН ЗА ПОДКРЕПА */
+        .donate-fab {
             position: fixed;
-            bottom: 30px;
-            width: 90%;
-            max-width: 400px;
+            bottom: 40px;
             background: linear-gradient(135deg, #00f2ff 0%, #00ff00 100%);
             color: #000;
-            text-align: center;
-            padding: 18px 0;
-            font-weight: 700;
+            padding: 20px 40px;
+            border-radius: 50px;
             text-decoration: none;
+            font-weight: bold;
             font-size: 18px;
-            border-radius: 50px; /* Овална форма за повече стил */
-            z-index: 9999;
-            box-shadow: 0 10px 40px rgba(0, 255, 0, 0.3);
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+            transition: 0.3s;
             text-transform: uppercase;
+            z-index: 100;
         }
-        .support-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 50px rgba(0, 255, 0, 0.5);
-        }
+        .donate-fab:hover { transform: scale(1.05); filter: brightness(1.1); }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <img src="logo.jpg" alt="Art Hub">
+    <div class="site-title">Global Artists Hub</div>
+
+    <div class="hero-container">
+        <img src="logo.jpg" alt="Hub Banner">
     </div>
 
-    <div class="mission-header">Нашата Мисия</div>
-    <div class="mission-text">
-        Добре дошли в едно споделено пространство, създадено за творци. 
-        Тук изкуството среща подкрепата, а опитът се обменя свободно. 
-        Нашата цел е да дадем гласност на всеки талант.
+    <div class="mission-section">
+        <h1>Нашата Мисия</h1>
+        <p>Това е независимо пространство за обмен на идеи. Тук артистите могат да представят своите визии, да се учат един от друг и да получават признанието, което заслужават.</p>
     </div>
 
-    <div class="gallery-container">
-        <h2 class="gallery-title">Подбрани Творби</h2>
+    <div class="gallery-wrapper">
+        <div class="gallery-header">
+            <span>Общностни Творби</span>
+            <span style="color: #444;">Live Gallery</span>
+        </div>
+        
         <div class="gallery-grid">
-            <div class="art-card">
-                <img src="logo.jpg">
-                <div class="art-label">Digital Vision #1</div>
+            <div class="art-item">
+                <div class="art-img-box"><img src="logo.jpg"></div>
+                <div class="art-meta">
+                    <b>Artist Name #1</b>
+                    Project Title: "Neon Dreams"
+                </div>
             </div>
-            <div class="art-card">
-                <img src="logo.jpg">
-                <div class="art-label">Digital Vision #2</div>
+
+            <div class="art-item">
+                <div class="art-img-box"><img src="logo.jpg"></div>
+                <div class="art-meta">
+                    <b>Artist Name #2</b>
+                    Project Title: "Future Echo"
+                </div>
             </div>
-            <div class="art-card">
-                <img src="logo.jpg">
-                <div class="art-label">Digital Vision #3</div>
+
+            <div class="art-item">
+                <div class="art-img-box"><img src="logo.jpg"></div>
+                <div class="art-meta">
+                    <b>Artist Name #3</b>
+                    Project Title: "Abstract Hub"
+                </div>
             </div>
         </div>
     </div>
 
-    <a href="https://www.buymeacoffee.com/kiber" target="_blank" class="support-btn">
-        ☕ Подкрепете изкуството
+    <a href="https://www.buymeacoffee.com/kiber" target="_blank" class="donate-fab">
+        ☕ Подкрепете Хаба
     </a>
 
 </body>
-</html>
+</html>            
